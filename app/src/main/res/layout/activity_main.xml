@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="30dp"
+        android:visibility="gone"
+        android:id="@+id/logged_in_info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_below="@id/logged_in_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="signout"
+        android:id="@+id/signout"
+        android:textSize="20dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_below="@id/signout"
+        android:textColor="@color/black"
+        android:background="@drawable/rectangle"
+        android:text="Scan text"
+        android:visibility="gone"
+        android:id="@+id/scan"/>
+</RelativeLayout>

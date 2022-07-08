@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "823521131690",
+    "firebase_url": "https://inventory-23650-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "inventory-23650",
+    "storage_bucket": "inventory-23650.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823521131690:android:d8428d1d029195b449a4d3",
+        "android_client_info": {
+          "package_name": "com.example.inventorymanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823521131690-37pb4kcf1hn22takttlj5b68qlqbimh7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.inventorymanagement",
+            "certificate_hash": "b29098bc23ba8e2d106dd13a3c1bf2e82b46099d"
+          }
+        },
+        {
+          "client_id": "823521131690-jks4cs4kffh08irhkdsf4b1meccffutd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUGy_xhbxUcE98Utf7oglfWfqfgKqJjiw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823521131690-jks4cs4kffh08irhkdsf4b1meccffutd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

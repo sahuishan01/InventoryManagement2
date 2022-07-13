@@ -13,6 +13,9 @@
         <entry key="..\:/ishan/InventoryManagement/app/src/main/res/drawable/sign_up_ripple.xml" value="0.2545" />
         <entry key="..\:/ishan/InventoryManagement/app/src/main/res/font/.xml" value="0.27589743589743587" />
         <entry key="..\:/ishan/InventoryManagement/app/src/main/res/font/open_sans_bold.xml" value="0.13958333333333334" />
+        <entry key="..\:/ishan/InventoryManagement/app/src/main/res/layout/activity_chemical_list.xml" value="0.25" />
+        <entry key="..\:/ishan/InventoryManagement/app/src/main/res/layout/activity_image_upload.xml" value="0.2210144927536232" />
+        <entry key="..\:/ishan/InventoryManagement/app/src/main/res/layout/activity_inventory.xml" value="0.16799999999999998" />
         <entry key="..\:/ishan/InventoryManagement/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
         <entry key="..\:/ishan/InventoryManagement/app/src/main/res/layout/activity_login1.xml" value="0.1" />
         <entry key="..\:/ishan/InventoryManagement/app/src/main/res/layout/activity_login_signup.xml" value="0.22826086956521738" />
@@ -21,6 +24,7 @@
         <entry key="..\:/ishan/InventoryManagement/app/src/main/res/layout/activity_text_graphic.xml" value="0.10925925925925926" />
         <entry key="..\:/ishan/InventoryManagement/app/src/main/res/layout/activity_text_scan.xml" value="0.10925925925925926" />
         <entry key="..\:/ishan/InventoryManagement/app/src/main/res/layout/search_result_rv_item.xml" value="0.20606884057971014" />
+        <entry key="..\:/ishan/InventoryManagement/app/src/main/res/layout/single_view.xml" value="0.25" />
       </map>
     </option>
   </component>

@@ -35,4 +35,24 @@
         android:text="Scan text"
         android:visibility="gone"
         android:id="@+id/scan"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_below="@id/scan"
+        android:textColor="@color/black"
+        android:background="@drawable/rectangle"
+        android:text="Upload Image"
+        android:visibility="gone"
+        android:id="@+id/imageUpload"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_below="@id/imageUpload"
+        android:textColor="@color/black"
+        android:background="@drawable/rectangle"
+        android:text="Add Content"
+        android:visibility="gone"
+        android:id="@+id/addContent"/>
 </RelativeLayout>

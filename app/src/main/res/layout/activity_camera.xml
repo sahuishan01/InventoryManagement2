@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CameraActivity"
+
+    >
+<LinearLayout
+android:layout_width="wrap_content"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    android:id="@+id/linear1">
+        <ImageView
+            android:contentDescription="snap Image"
+            android:id="@+id/imageView"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+             />
+        <Button
+            android:layout_marginTop="20dp"
+
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:background="@drawable/rectangle"
+            android:id="@+id/read_text"
+            android:text="Read text"
+
+            android:textColor="@color/black_shade_1"
+            />
+        <TextView
+            android:id="@+id/scanned_text"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:hint="Your scanned text will be displayed here"
+            android:scrollbars="vertical"
+                />
+</LinearLayout>
+</ScrollView>

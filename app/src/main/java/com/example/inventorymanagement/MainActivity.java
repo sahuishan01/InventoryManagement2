@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
 
         });
         scan.setOnClickListener(view ->{
-            startActivity(new Intent(MainActivity.this, Chemical_list.class));
+            startActivity(new Intent(MainActivity.this, CameraActivity.class));
         });
         imageUpload.setOnClickListener(view ->{
-            startActivity(new Intent(MainActivity.this, ImageUpload.class));
+            startActivity(new Intent(MainActivity.this,Chemical_list.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
         });
     }
     public void onStart() {

@@ -17,7 +17,5 @@ public class Chemical_list extends AppCompatActivity {
         rclview=(RecyclerView) findViewById(R.id.rclview);
         rclview.setLayoutManager(new LinearLayoutManager(this));
 
-        String arr[]={"C", "C++", "java", "php", ".net", "python",  "scala", "hadoop", "Jquery","C", "C++", "java", "php", ".net", "python",  "scala", "hadoop", "Jquery","C", "C++", "java", "php", ".net", "python",  "scala", "hadoop", "Jquery"};
-        rclview.setAdapter(new MyAdapter(arr));
     }
 }

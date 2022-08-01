@@ -1,16 +1,7 @@
 package com.example.inventorymanagement;
 
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.Manifest;
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -21,6 +12,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -37,42 +34,40 @@ import com.karumi.dexter.listener.single.PermissionListener;
 import java.io.InputStream;
 
 public class ImageUpload extends AppCompatActivity {
-ImageView img;
-Button browse, upload;
-Uri filepath;
-Bitmap bitmap;
-ActivityResultLauncher<Intent> activityResultLauncher;
+    ImageView img;
+    Button browse, upload;
+    Uri filepath;
+    Bitmap bitmap;
+    ActivityResultLauncher<Intent> activityResultLauncher;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_upload);
 
-        img=(ImageView) findViewById(R.id.uploaded_image);
-        browse=(Button) findViewById(R.id.browse);
-        upload=(Button) findViewById(R.id.upload);
+        img = (ImageView) findViewById(R.id.uploaded_image);
+        browse = (Button) findViewById(R.id.browse);
+        upload = (Button) findViewById(R.id.upload);
 
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
 
 
-
             public void onActivityResult(ActivityResult result) {
-             if(result.getResultCode()==RESULT_OK){
-           filepath=result.getData().getData();
-                 Toast.makeText(ImageUpload.this, "Path copied", Toast.LENGTH_SHORT).show();
-           try{
-               InputStream inputStream= getContentResolver().openInputStream(filepath);
-               bitmap = BitmapFactory.decodeStream(inputStream);
-               img.setImageBitmap(bitmap);
-           }
-           catch (Exception e){
-               Toast.makeText(ImageUpload.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-           }
-       }
-        else{
-                 Toast.makeText(ImageUpload.this, "Something went wrong", Toast.LENGTH_SHORT).show();
-             }
-
+                if (result.getResultCode() == RESULT_OK) {
+                    filepath = result.getData().getData();
+                    Toast.makeText(ImageUpload.this, "Path copied", Toast.LENGTH_SHORT).show();
+                    try {
+                        InputStream inputStream = getContentResolver().openInputStream(filepath);
+                        bitmap = BitmapFactory.decodeStream(inputStream);
+                        img.setImageBitmap(bitmap);
+                    } catch (Exception e) {
+                        Toast.makeText(ImageUpload.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(ImageUpload.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                 }
+
+            }
 
         });
         browse.setOnClickListener(new View.OnClickListener() {
@@ -83,7 +78,7 @@ ActivityResultLauncher<Intent> activityResultLauncher;
                         .withListener(new PermissionListener() {
                             @Override
                             public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
-                                Intent intent=new Intent(Intent.ACTION_PICK);
+                                Intent intent = new Intent(Intent.ACTION_PICK);
                                 intent.setType("image/*");
 //                                startActivityForResult(Intent.createChooser(intent, "Please select an image"),1);
                                 activityResultLauncher.launch(intent);
@@ -113,11 +108,11 @@ ActivityResultLauncher<Intent> activityResultLauncher;
     }
 
     private void uploadtofirebase() {
-        ProgressDialog dialog=new ProgressDialog(this);
+        ProgressDialog dialog = new ProgressDialog(this);
         dialog.setTitle("File uploader");
         dialog.show();
-        FirebaseStorage firebaseStorage=FirebaseStorage.getInstance();
-        StorageReference uploader= firebaseStorage.getReference().child("image1");
+        FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
+        StorageReference uploader = firebaseStorage.getReference().child("image1");
         uploader.putFile(filepath)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -132,28 +127,9 @@ ActivityResultLauncher<Intent> activityResultLauncher;
                     public void onProgress(UploadTask.TaskSnapshot snapshot) {
                         float percent=(100* snapshot.getBytesTransferred())/snapshot.getTotalByteCount();
 
-                        dialog.setMessage("Uploaded :"+(int)percent+" %");
+                        dialog.setMessage("Uploaded :" + (int) percent + " %");
                     }
                 });
     }
-
-
-
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//
-//       if(resultCode==1 && resultCode==RESULT_OK){
-//           filepath=data.getData();
-//           try{
-//               InputStream inputStream= getContentResolver().openInputStream(filepath);
-//               bitmap = BitmapFactory.decodeStream(inputStream);
-//               img.setImageBitmap(bitmap);
-//           }
-//           catch (Exception e){
-//               Toast.makeText(this, "Failed with error "+e.getMessage(), Toast.LENGTH_SHORT).show();
-//           }
-//       }
-//        super.onActivityResult(requestCode, resultCode, data);
-//    }
-
 }
+

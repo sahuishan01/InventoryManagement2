@@ -32,13 +32,13 @@ public class Inventory extends AppCompatActivity {
         int quantityML=Integer.parseInt(netQuantity.getText().toString());
         int bottleAmount=Integer.parseInt(noOfBottles.getText().toString());
 
-        dataHolder obj=new dataHolder(formula, desc, quantityML, bottleAmount);
+//        modelClassChemicalNames obj=new modelClassChemicalNames(formula, desc, quantityML, bottleAmount);
 
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance("https://inventory-23650-default-rtdb.asia-southeast1.firebasedatabase.app/");
         DatabaseReference node=firebaseDatabase.getReference("Chemicals");
 
 
-        node.child(name).setValue(obj);
+//        node.child(name).setValue(obj);
 
         chemical_name.setText("");
         chemical_formula.setText("");
